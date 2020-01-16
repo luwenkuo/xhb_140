@@ -1,0 +1,773 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:等线;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;}
+@font-face
+	{font-family:"Source Code Pro";
+	panose-1:2 11 5 9 3 4 3 2 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@微软雅黑";}
+@font-face
+	{font-family:"\@等线";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:等线;}
+.MsoChpDefault
+	{font-family:等线;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-size:18.0pt;font-family:宋体'>C </span></b><b><span style='font-size:
+18.0pt;font-family:宋体'>语言开发环境<span lang=EN-US> v2 </span>帮助说明</span></b></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>小提示：按</span><span lang=EN-US style='font-size:13.5pt;font-family:
+"Source Code Pro";color:#444444'>Ctrl+C</span><span style='font-size:13.5pt;
+font-family:"微软雅黑",sans-serif;color:#444444'>可以终止程序运行</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span style='font-size:16.0pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>注意：</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>1.</span><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>开启中文输入法时会很难在下面的模拟终端里打字，切换成英文就好了</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>2.</span><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>如果您想用</span><span lang=EN-US style='font-size:13.5pt;font-family:
+"Source Code Pro";color:#444444'>printf &quot;%p&quot;&nbsp;</span><span
+style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;color:#444444'>输出指针的数值，请把后面对应的参数转换成</span><span
+lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";color:#444444'>void*</span><span
+style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;color:#444444'>，如、</span></p>
+
+<p class=MsoNormal align=left style='margin-left:147.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;%p %p&quot;,
+(void*)&amp;a, (void*)&quot;hello&quot;)&nbsp;</span><span style='font-size:
+13.5pt;font-family:"微软雅黑",sans-serif;color:#444444'>否侧输出可能会出错。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>3.</span><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>如果您在运行程序的时候遇到了诸如</span><span lang=EN-US style='font-size:13.5pt;
+font-family:"Source Code Pro";color:#444444'>Internal xxx error</span><span
+style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;color:#444444'>的字样，请不要慌张，这是我们出了问题，</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>&nbsp;</span><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>问题会自动汇报给我们，我们会尽快修复。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:189.0pt;text-align:left;
+text-indent:21.0pt'><span lang=EN-US style='font-size:13.5pt;font-family:"Source Code Pro";
+color:#444444'>4.</span><span style='font-size:13.5pt;font-family:"微软雅黑",sans-serif;
+color:#444444'>支持的头文件和库函数</span><span lang=EN-US style='font-size:13.5pt;
+font-family:"Source Code Pro";color:#444444'>:</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=359
+ style='width:269.6pt;border-collapse:collapse'>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>stdlib.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>void exit(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int rand();</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>void srand();</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int abs(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>long labs(long);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>long long llabs(long long);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>time.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>time_t</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>time_t time(time_t*)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>stdio.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int fprintf (FILE * stream, const char *
+  format, ...);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int printf (const char * format, ...);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int scanf (const char * format, ...);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int getchar();</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>char* gets(char*)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>char* fgets(char* str, int count, FILE*
+  stream);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>assert.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>void assert(int)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>stddef.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>ptrdiff_t</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>NULL</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>ctype.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isalpha(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int iscntrl(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isdigit(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isgraph(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int islower(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isprint(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int ispunct(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isspace(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isupper(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int isxdigit(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int tolower(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int toupper(int);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>math.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double acosh(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double asin(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double atan(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double atanh(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double cbrt(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double ceil(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double cos(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double cosh(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double exp(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double expm1(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double fabs(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double floor(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double fmax(double, double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double fmin(double, double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double fmod(double, double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double hypot(double, double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double log(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double log10(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double log1p(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double log2(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double logb(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double pow(double, double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double round(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double sin(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double sinh(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double sqrt(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double tan(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double tanh(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>double trunc(double);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>string.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int strlen(const char*);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int strcmp(const char* lhs, const char*
+  rhs);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>int strncmp(const char* lhs, const char*
+  rhs, size_t count);</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>limits.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>SCHAR_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>UCHAR_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>CHAR_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>CHAR_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>SHRT_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>USHRT_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>INT_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>INT_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>UINT_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>LONG_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>LONG_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>ULONG_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>LLONG_MIN</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>LLONG_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>ULLONG_MAX</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#C6EFCE;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US style='font-size:11.0pt;color:#006100'>stdarg.h</span></b></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>va_list</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>va_start(ap, arg)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>va_end(ap)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>va_arg(ap, type)</span></p>
+  </td>
+ </tr>
+ <tr style='height:13.95pt'>
+  <td width=359 nowrap style='width:269.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:13.95pt'>
+  <p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+  style='font-size:11.0pt;color:black'>va_copy(ap, ap)</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
